@@ -19,4 +19,10 @@ public class ProductDetailTest {
         String actual=productDetail.category;
         assertEquals(expected,actual);
     }
+    @Test public void itShouldGiveThePriceOfTheProduct(){
+        double expected=12;
+        ProductDetail productDetail=new ProductDetail(1,12,"Book",false,"Programming");
+        double actual=productDetail.price;
+        assertEquals(expected,actual);
+    }
 }
