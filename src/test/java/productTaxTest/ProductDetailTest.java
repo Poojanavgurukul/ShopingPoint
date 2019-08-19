@@ -13,4 +13,10 @@ public class ProductDetailTest {
         String actual=productDetail.name;
         assertEquals(expected,actual);
     }
+    @Test public void itShouldGiveTheCategoryOfTheProduct(){
+        String expected="Book";
+        ProductDetail productDetail=new ProductDetail(1,12,"Book",false,"Programming");
+        String actual=productDetail.category;
+        assertEquals(expected,actual);
+    }
 }
