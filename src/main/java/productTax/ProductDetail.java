@@ -7,7 +7,7 @@ public class ProductDetail {
     public boolean imported;
     public String name;
 
-    public ProductDetail(int quantity, double price, String category,boolean imported,String name) {
+    public ProductDetail(int quantity, double price, String category, boolean imported, String name) {
         this.quantity = quantity;
         this.price = price;
         this.category = category;
