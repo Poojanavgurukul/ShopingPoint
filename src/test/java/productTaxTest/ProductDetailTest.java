@@ -25,4 +25,11 @@ public class ProductDetailTest {
         double actual=productDetail.price;
         assertEquals(expected,actual);
     }
+
+    @Test public void itShouldGiveTheQuantityOfTheProduct(){
+        int expected=2;
+        ProductDetail productDetail=new ProductDetail(2,12,"Book",false,"Programming");
+        int actual=productDetail.quantity;
+        assertEquals(expected,actual);
+    }
 }
