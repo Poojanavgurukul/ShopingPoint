@@ -32,4 +32,10 @@ public class ProductDetailTest {
         int actual=productDetail.quantity;
         assertEquals(expected,actual);
     }
+    @Test public void itShouldGiveProductIsImported(){
+        boolean expected=true;
+        ProductDetail productDetail=new ProductDetail(2,12,"chocolate",true,"kitkat");
+        boolean actual=productDetail.imported;
+        assertEquals(expected,actual);
+    }
 }
