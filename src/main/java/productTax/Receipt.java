@@ -1,20 +1,30 @@
 package productTax;
 
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Receipt {
-    private final List<ProductDetail> receipt= Arrays.asList();
-    private double totalAmount=0;
-    public List<ProductDetail> addProduct(int quantity, double price, String category, boolean imported, String name){
-        ProductDetail product = new ProductDetail(quantity,price,category,imported,name);
-        receipt.add(product);
-        totalAmount+=product.price;
-        return receipt;
+    private final List<Product> bills= new ArrayList<>();
+    private double totalAmount = 0;
+    private double totalTax=0;
+    SalesTax salesTax=new SalesTax();
+    public Receipt addProduct(int quantity, double price, boolean imported, String name,boolean isTaxApplicable){
+        Product product = new Product(quantity,price,imported,name,isTaxApplicable);
+        bills.add(product);
+        totalTax+=salesTax.getTax(product.price,product.isImported,product.isTaxApplicable,product.quantity);
+        totalAmount+=product.price*product.quantity;
+        return this;
+    }
+    public List<Product> getProducts() {
+        return bills;
     }
 
-    public double getTotalAmount(){
+    public double getTotalAmount() {
         return totalAmount;
     }
+    public double getTotalTax(){
+        return totalTax;
+    }
+
 }

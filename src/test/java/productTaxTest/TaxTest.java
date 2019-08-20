@@ -9,13 +9,13 @@ public class TaxTest {
     @Test public void itShouldGiveSalesTaxOnNonImportedProduct(){
         double expected=1.9;
         SalesTax salesTax=new SalesTax();
-        double actual=salesTax.getTax(18,false);
+        double actual=salesTax.getTax(18,false,false);
         assertEquals(expected,actual,1);
     }
     @Test public void itShouldGiveSalesTaxOnImportedProduct(){
         double expected=7.15;
         SalesTax salesTax=new SalesTax();
-        double actual=salesTax.getTax(47.50,true);
+        double actual=salesTax.getTax(47.50,true,false);
         assertEquals(expected,actual,1);
     }
 }
