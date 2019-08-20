@@ -6,7 +6,6 @@ public class SalesTax {
     public double getTax(double amount,boolean imported,boolean isTaxApplicable,int quantity){
         double salesTax= tax*amount*quantity/100;
         if (isTaxApplicable){
-            System.out.println(salesTax);
             if (imported){
                 return salesTax+extraTax*amount/100;
             }
