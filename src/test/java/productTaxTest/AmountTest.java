@@ -9,7 +9,7 @@ public class AmountTest {
     @Test public void itShouldGiveTheAmountPerQuantity(){
         double expected=20;
         Amount amount=new Amount();
-        double atcual=amount.getAmount(2,10);
-        assertEquals(expected,atcual,1);
+        double actual=amount.getAmount(2,10);
+        assertEquals(expected,actual,1);
     }
 }
