@@ -3,18 +3,16 @@ package productTax;
 import java.util.Objects;
 
 public class Product {
-    public int quantity;
     public double price;
     public boolean isImported;
     public String name;
-    public boolean isTaxApplicable;
+    public String category;
 
-    public Product(int quantity, double price, boolean isImported, String name, boolean isTaxApplicable) {
-        this.quantity = quantity;
+    public Product(double price, boolean isImported, String name,String category) {
         this.price = price;
         this.isImported = isImported;
         this.name = name;
-        this.isTaxApplicable=isTaxApplicable;
+        this.category=category;
     }
 
     @Override
@@ -22,15 +20,14 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return quantity == product.quantity &&
-                Double.compare(product.price, price) == 0 &&
+        return Double.compare(product.price, price) == 0 &&
                 isImported == product.isImported &&
-                isTaxApplicable == product.isTaxApplicable &&
-                Objects.equals(name, product.name);
+                Objects.equals(name, product.name)
+                && Objects.equals(category,product.category);
     }
 
     @Override
     public String toString() {
-        return quantity+" "+ name +" at "+ price;
+        return name +" at "+ price;
     }
 }
