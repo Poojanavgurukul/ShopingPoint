@@ -1,6 +1,6 @@
 package productTax;
 
-public class SalesTax {
+public class TaxCalculator {
     private int tax=10;
     private int extraTax=5;
     public double getTax(double amount,boolean imported,boolean isTaxApplicable,int quantity){

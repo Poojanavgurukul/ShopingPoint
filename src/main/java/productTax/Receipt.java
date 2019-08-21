@@ -8,11 +8,11 @@ public class Receipt {
     private final List<Product> bills= new ArrayList<>();
     private double totalAmount = 0;
     private double totalTax=0;
-    SalesTax salesTax=new SalesTax();
+    TaxCalculator taxCalculator =new TaxCalculator();
     public Receipt addProduct(int quantity, double price, boolean isImported, String name,boolean isTaxApplicable){
-        Product product = new Product(quantity,price+salesTax.getTax(price,isImported,isTaxApplicable,quantity),isImported,name,isTaxApplicable);
+        Product product = new Product(quantity,price+ taxCalculator.getTax(price,isImported,isTaxApplicable,quantity),isImported,name,isTaxApplicable);
         bills.add(product);
-        totalTax+=salesTax.getTax(product.price,product.isImported,product.isTaxApplicable,product.quantity);
+        totalTax+= taxCalculator.getTax(product.price,product.isImported,product.isTaxApplicable,product.quantity);
         totalAmount+=product.price*product.quantity;
         return this;
     }
