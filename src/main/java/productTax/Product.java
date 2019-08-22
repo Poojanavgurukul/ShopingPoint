@@ -15,19 +15,7 @@ public class Product {
         this.category=category;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 &&
-                isImported == product.isImported &&
-                Objects.equals(name, product.name)
-                && Objects.equals(category,product.category);
-    }
-
-    @Override
-    public String toString() {
-        return name +" at "+ price;
+    public String getCategory() {
+        return category;
     }
 }
