@@ -18,6 +18,6 @@ public class Client {
 
         ReceiptGenerator receiptGenerator = new ReceiptGenerator();
         receiptGenerator.generate(productTaxMap,cart);
-        receiptGenerator.receiptPrinter();
+        receiptGenerator.getPrintReceipt();
     }
 }

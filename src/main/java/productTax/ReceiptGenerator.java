@@ -20,24 +20,24 @@ public class ReceiptGenerator {
             double amount = products.getKey().price * quantity;
             bill.add(getItemDetails(products, quantity, amount));
             totalTax += products.getValue();
-            totalCost += calculator(products.getValue(), amount);
+            totalCost += calculatePriceWithTax(products.getValue(), amount);
         }
     }
 
     public Map<String, String> getItemDetails(Map.Entry<Product, Double> product, int quantity, double price) {
         Product key = product.getKey();
         Map<String, String> receipt = new HashMap<>();
-        receipt.put("price", String.valueOf(df.format(calculator(product.getValue(), price))));
+        receipt.put("price", String.valueOf(df.format(calculatePriceWithTax(product.getValue(), price))));
         receipt.put("quantity", String.valueOf(quantity));
         receipt.put("category", key.getCategory());
         return receipt;
     }
 
-    public double calculator(Double tax, double price) {
+    public double calculatePriceWithTax(Double tax, double price) {
         return price + tax;
     }
 
-    public void receiptPrinter() {
+    public void getPrintReceipt() {
         for (Map<String, String> aReceipt : this.bill) {
             for (Map.Entry<String, String> item : aReceipt.entrySet()) {
                 System.out.print(item.getValue() + " ");
