@@ -9,29 +9,23 @@ import static org.junit.Assert.assertEquals;
 public class ProductTest {
 
     @Test public void itShouldGiveTheNameOfTheProduct(){
-        String expected="Programming";
-        Product product =new Product(1,12,false,"Programming",false);
+        String expected="Java";
+        Product product =new Product("Java",12,"BOOK",false);
         String actual= product.name;
         assertEquals(expected,actual);
     }
 
     @Test public void itShouldGiveThePriceOfTheProduct(){
         double expected=12;
-        Product product =new Product(1,12,false,"Java",false);
+        Product product =new Product("Java",12,"BOOK",false);
         double actual= product.price;
         assertEquals(expected,actual,1);
     }
 
-    @Test public void itShouldGiveTheQuantityOfTheProduct(){
-        int expected=2;
-        Product product =new Product(2,12,false,"Java",false);
-        int actual= product.quantity;
-        assertEquals(expected,actual);
-    }
     @Test public void itShouldGiveProductIsImported(){
-        boolean epected=true;
-        Product product =new Product(2,12,true,"kitkat",false);
+        boolean expected=true;
+        Product product =new Product("Mobile",12,"electronic",true);
         boolean actual= product.isImported;
-        assertEquals(epected,actual);
+        assertEquals(expected,actual);
     }
 }

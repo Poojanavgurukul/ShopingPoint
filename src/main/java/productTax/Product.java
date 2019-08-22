@@ -8,7 +8,7 @@ public class Product {
     public String name;
     public String category;
 
-    public Product(double price, boolean isImported, String name,String category) {
+    public Product(String name, double price, String category, boolean isImported) {
         this.price = price;
         this.isImported = isImported;
         this.name = name;
